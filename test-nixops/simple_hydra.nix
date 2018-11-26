@@ -26,7 +26,7 @@
       notificationSender = "hydra@example.org";
       buildMachinesFiles = [];
       extraConfig = ''
-        store_uri = file:///var/lib/hydra/cache?secret-key=/etc/nix/my-hydra/secret
+        binary_cache_secret_key_file = /etc/nix/my-hydra/secret
       '';
   };
   services.nginx = {
@@ -77,7 +77,7 @@
       maxJobs = 6;
       # for building VirtualBox VMs as build artifacts, you might need other 
       # features depending on what you are doing
-      supportedFeatures = [ "nixos-test" "benchmark" ];
+      supportedFeatures = [ "kvm" "nixos-test" "benchmark" ];
     }
   ];
 };
