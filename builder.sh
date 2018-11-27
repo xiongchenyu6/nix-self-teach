@@ -1,3 +1,2 @@
-set -e
-source $setup
-genericBuild
+declare -xp
+echo foo > $out
